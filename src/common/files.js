@@ -1,4 +1,4 @@
-export const getCompressedImg = async (file, maxWidth) => {
+export const getCompressedImg = async (file, maxWidth, maxHeight) => {
   if (!file) return "Error";
   let result = "";
   const fileType = file.type;
@@ -16,7 +16,7 @@ export const getCompressedImg = async (file, maxWidth) => {
         const target = ev.target;
         const scaleSize = MAX_WIDTH / target.width;
         canvast.width = MAX_WIDTH;
-        canvast.height = target.height * scaleSize;
+        canvast.height = maxHeight || target.height * scaleSize;
         const ctx = canvast.getContext("2d");
         ctx.drawImage(target, 0, 0, canvast.width, canvast.height);
         result = ctx.canvas.toDataURL(target, fileType);
