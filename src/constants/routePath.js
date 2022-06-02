@@ -1,2 +1,2 @@
 export const basePath = "/";
-export const newBook = "/book/new";
+export const newBookPath = "/book/new";
