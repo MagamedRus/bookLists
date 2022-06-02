@@ -1,0 +1,51 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  border: 0;
+}
+
+.inputText {
+  width: 96%;
+  height: 25px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 0 2%;
+  @extend %font_input;
+}
+
+.errorText {
+  position: relative;
+  top: 3px;
+  @extend %font_error_p;
+}
+
+%indicator {
+  height: 3px;
+  margin-top: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.unreadIndicator {
+  @extend %indicator;
+  background-color: $color-bg-container;
+}
+
+.choosedIndicator {
+  @extend %indicator;
+  background-color: $color-choosed-input-border;
+}
+
+.successIndicator {
+  @extend %indicator;
+  background-color: $color-success-indicator;
+}
+
+.errorIndicator {
+  @extend %indicator;
+  background-color: $color-error-indicator;
+}
