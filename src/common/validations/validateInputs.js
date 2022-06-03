@@ -13,7 +13,7 @@ import {
 
 export const validName = (value) => {
   let result = null;
-  const name = value?.replace(" ", "");
+  const name = value?.replaceAll(" ", "");
   const logLength = name?.length;
   const isGoodLength = logLength >= 2;
   const isEmpty = name === null && !name;
@@ -29,7 +29,7 @@ export const validName = (value) => {
 
 export const validTitle = (value) => {
   let result = null;
-  const title = value?.replace(" ", "");
+  const title = value?.replaceAll(" ", "");
   const logLength = title?.length;
   const isGoodLength = logLength >= 2;
   const isEmpty = title === null && !title;
