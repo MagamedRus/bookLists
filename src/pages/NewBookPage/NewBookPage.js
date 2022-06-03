@@ -14,10 +14,10 @@ import { createNewBook } from "../../controllers/book";
 function NewBookPage() {
   const params = useLocation();
   const navigator = useNavigate();
-  const [bookData, setBookData] = useState({...bookStates});
+  const [bookData, setBookData] = useState({ ...bookStates });
   const [imgData, setImgData] = useState(null);
-  const [errStates, setErrStates] = useState({...bookStates});
-  const validTimers = {...bookStates};
+  const [errStates, setErrStates] = useState({ ...bookStates });
+  const validTimers = { ...bookStates };
 
   const onConfirm = () => {
     const isError = checkAll();
@@ -26,6 +26,10 @@ function NewBookPage() {
       navigator(basePath);
     }
   };
+
+  const goBack = () => {
+    navigator(-1);
+  }
 
   const checkAll = () => {
     let isError = false;
@@ -91,9 +95,14 @@ function NewBookPage() {
         </div>
         <div className={styles.rightContent}>
           <CombinedImage imgData={imgData} setImgData={setImgData} />
-          <button onClick={onConfirm} className={styles.createBtn}>
-            Создать
-          </button>
+          <div>
+            <button onClick={goBack} className={styles.createBtn}>
+              Назад
+            </button>
+            <button onClick={onConfirm} className={styles.createBtn}>
+              Создать
+            </button>
+          </div>
         </div>
       </Frame>
     </div>
