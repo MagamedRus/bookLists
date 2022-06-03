@@ -6,7 +6,7 @@ import { bookStates } from "../../constants/initialStates/bookStates";
 import { bookInputType } from "../../constants/types/newBookInputTypes";
 
 const NewBookModal = ({ goNext }) => {
-  const [data, setData] = useState(bookStates);
+  const [data, setData] = useState({ ...bookStates });
 
   const onConfirm = () => goNext(data);
   const changeData = (typeData, value) => {
