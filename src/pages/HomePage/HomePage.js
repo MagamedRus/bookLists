@@ -4,17 +4,7 @@ import BooksCards from "../../components/BooksCards/BooksCards";
 import NewBookModal from "../../components/NewBookModal/NewBookModal";
 import styles from "./HomePage.module.scss";
 import { newBookPath } from "../../constants/routePath";
-
-const testData = [
-  {
-    id: 0,
-    title: "someBook",
-    author: "someOne",
-    year: "2022",
-    genre: "Detective",
-    imageId: null,
-  },
-];
+import { getAllBooks } from "../../controllers/book";
 
 class HomePage extends Component {
   state = {
@@ -31,7 +21,8 @@ class HomePage extends Component {
   }
 
   async uploadData() {
-    this.setState({ booksData: testData });
+    const booksData = getAllBooks();
+    this.setState({ booksData: booksData });
   }
 
   goToCreateBook = (payload) => {
