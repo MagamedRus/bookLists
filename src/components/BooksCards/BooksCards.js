@@ -5,7 +5,7 @@ import Frame from "../Frame/Frame";
 
 const BooksCards = ({ booksData }) => {
   return (
-    <Frame style={styles.container} headerText={"Книги"}>
+    <Frame style={styles.container}>
       <div className={styles.content}>
         {booksData.map((bookData) => (
           <BookCard key={bookData.id} bookData={bookData} />

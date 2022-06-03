@@ -1,4 +1,5 @@
 @import "../../styles/utils.scss";
+
 .container {
   display: flex;
   align-items: center;
@@ -7,6 +8,8 @@
   height: 735px;
   padding: 35px 15px 20px 15px;
   margin-left: 120px;
+  overflow-y: scroll;
+  @extend %hideScrollbar;
 }
 
 .content {
