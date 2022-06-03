@@ -1,0 +1,39 @@
+@import "../../styles/fonts.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 1150px;
+  padding: 120px 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  padding: 45px 20px 30px 20px;
+  height: 350px;
+}
+
+.fillInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input {
+  margin: 0;
+}
+
+.createBtn {
+  width: 150px;
+}
+
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+}
