@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { getImage } from "../../controllers/file";
 import BookImage from "../BookImage/BookImage";
 import BookInfoCard from "../BookInfoCard/BookInfoCard";
 import styles from "./BookCard.module.scss";
@@ -8,15 +8,13 @@ const BookCard = ({ bookData }) => {
   const { title, imageId } = bookData;
   const [imgData, setImgData] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  // const navigate = useNavigate();
 
   const changeOpenState = () => setIsOpen(!isOpen);
 
   const uploadImg = useCallback(async () => {
     if (imageId != null) {
-      const strImagesData = localStorage.getItem("imagesData");
-      const imagesData = JSON.parse(strImagesData);
-      setImgData(imagesData[imageId]);
+      const imageData = getImage(imageId);
+      setImgData(imageData);
     }
   }, [imageId]);
 
@@ -24,7 +22,7 @@ const BookCard = ({ bookData }) => {
 
   return (
     <div className={styles.container}>
-      <BookImage title={title} imgData={imgData} />
+      <BookImage title={title} imgData={imgData?.src} />
       <div
         className={`${styles.actionContainer} ${
           isOpen && styles.openActionContainer
