@@ -7,8 +7,7 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
     <React.StrictMode>
-      {/* <App /> */}
-      <p>Some content</p>
+      <App />
     </React.StrictMode>,
   rootElement
 );
