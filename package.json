@@ -2,7 +2,7 @@
   "name": "list_books",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://MagamedRus.github.io/bookLists",
+  "homepage": "https://magamedrus.github.io/bookLists",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
